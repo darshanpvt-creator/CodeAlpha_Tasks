@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101323">
+    <title>MelodyForge AI | AI Music Generation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a class="brand" href="#">MelodyForge<span> AI</span></a>
+        <span class="status"><span class="status-dot"></span> AI Music Studio</span>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">AI-POWERED MUSIC CREATION</p>
+            <h1>Turn your ideas into <span>melodies.</span></h1>
+            <p class="subtitle">
+                Create original musical sequences using a trained LSTM neural network.
+                Generate a melody and download it as a MIDI file.
+            </p>
+        </section>
+
+        <section class="studio">
+            <div class="studio-heading">
+                <div>
+                    <p class="eyebrow">YOUR CREATIVE SPACE</p>
+                    <h2>Melody Generator</h2>
+                </div>
+                <span id="modelStatus" class="model-status">Loading AI model...</span>
+            </div>
+
+            <div class="controls">
+                <label for="length">Melody length</label>
+                <select id="length">
+                    <option value="16">16 notes</option>
+                    <option value="32" selected>32 notes</option>
+                    <option value="48">48 notes</option>
+                    <option value="64">64 notes</option>
+                </select>
+            </div>
+
+            <button id="generateButton" class="generate-button" disabled>
+                Generate Melody
+            </button>
+
+            <p id="message" class="message">Preparing your AI music model...</p>
+
+            <div id="result" class="result hidden">
+                <h3>Your melody is ready</h3>
+                <p id="noteCount"></p>
+                <button id="downloadButton" class="download-button">
+                    Download MIDI
+                </button>
+            </div>
+        </section>
+
+        <footer>
+            <p>MelodyForge AI · LSTM-based melody generation</p>
+        </footer>
+    </main>
+</body>
+</html>

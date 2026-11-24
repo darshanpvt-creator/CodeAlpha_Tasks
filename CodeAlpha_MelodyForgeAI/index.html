@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10101c">
+  <title>MelodyForge AI | LSTM Music Generator</title>
+</head>
+<body>
+  <div class="background-glow"></div>
+  <main class="app">
+    <header>
+      <div class="brand"><span class="brand-icon">♫</span> MELODYFORGE <span>AI</span></div>
+      <div class="status" id="modelStatus">Loading AI model...</div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">AI-POWERED MUSIC CREATION</p>
+      <h1>Turn patterns into<br><span>music.</span></h1>
+      <p class="intro">Create original melodies using a trained LSTM neural network.</p>
+    </section>
+
+    <section class="generator">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR STUDIO</p><h2>Melody generator</h2></div>
+        <span class="model-tag">LSTM MODEL</span>
+      </div>
+
+      <label for="length">Melody length <strong id="lengthValue">48 notes</strong></label>
+      <input id="length" type="range" min="16" max="96" step="8" value="48">
+
+      <label for="temperature">Creativity <strong id="temperatureValue">0.9</strong></label>
+      <input id="temperature" type="range" min="0.3" max="1.5" step="0.1" value="0.9">
+
+      <button id="generate" disabled>♫ Generate melody</button>
+      <p id="message" role="status">Preparing the trained model...</p>
+
+      <div id="result" hidden>
+        <h3>Your melody is ready</h3>
+        <canvas id="visualizer" width="900" height="180"></canvas>
+        <button id="download" class="secondary">Download MIDI</button>
+      </div>
+    </section>
+
+    <footer>Built with Python · PyTorch LSTM · ONNX Runtime Web</footer>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
